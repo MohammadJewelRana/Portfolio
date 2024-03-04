@@ -4,7 +4,8 @@ import SectionTitle from "../Shared/SectionTitle";
 
 const About = () => {
   return (
-    <div id="about" className="    my-16 text-black ">
+    <div id="about" name='abouts' className="my-16 text-black ">
+  
       <div className="max-w-7xl mx-auto p-4">
         <SectionTitle
           title={"About Me"}

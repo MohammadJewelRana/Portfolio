@@ -23,16 +23,16 @@ const Skills = () => {
 
 
 
-    // useEffect(() => {
-    //     Aos.init(
-    //         {
-    //             duration: 200
-    //         }
-    //     );
-    // })
+    useEffect(() => {
+        Aos.init(
+            {
+                duration: 200
+            }
+        );
+    })
 
     return (
-        <div id='skill' name='skills' className=' text-gray-300 px-4' >
+        <div id='skill' name='skills' className=' text-gray-300 px-4 pt-20' >
             <div className='max-w-7xl mx-auto p-4 flex flex-col  justify-center w-full h-full text-black'>
         <SectionTitle title={'Technical Skills'} subText={'hese are the technologies I have worked with.'}></SectionTitle>
 
@@ -44,7 +44,7 @@ const Skills = () => {
 
                             <>
                                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-slate-50 rounded-lg p-2 md:p-6 cursor-pointer' 
-                                // data-aos="fade-right" data-aos-offset="500" data-aos-easing="ease-in-sine"
+                                data-aos="fade-right" data-aos-offset="500" data-aos-easing="ease-in-sine"
                                 
                                 >
                                      <img className='p-2 w-24 h-24 mx-auto mt-3 rounded-full' src={item.image} alt="" />

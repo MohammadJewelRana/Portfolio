@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useProjects from '../hooks/useProjects';
 import useAllProjects from '../hooks/useAllProjects'
 import WorkDetails from './WorkDetails';
+import SectionTitle from '../Shared/SectionTitle';
 // import Modal from './Modal';
 
 const Work = () => {
@@ -69,12 +70,13 @@ const Work = () => {
 
 
     return (
-        <div id='work' name='skills' className=' text-gray-300 w-full  '>
-            <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-                <div>
-                    <p className='text-4xl  py-4 inline font-bold border-b-4 border-pink-600  '>Projects</p>
-                    <p className='py-12'>Check out some of my recent work.</p>
-                </div>
+        <div id='work' name='work' className=' text-black w-full pt-16 '>
+          
+          
+            <div className='max-w-7xl mx-auto p-6 flex flex-col justify-center w-full h-full'>
+          
+
+                <SectionTitle title={'Projects'} subText={'Check out some of my recent work. '}></SectionTitle>
 
                 {/* button */}
                 <div className='gap-8 mx-auto '>
@@ -85,9 +87,9 @@ const Work = () => {
                     <button onClick={() => handleData('mern')} className="btn btn-outline btn-warning m-4 font-bold text-2xl">  MERN</button>
                 </div>
 
+
                 {/* container  */}
                 <div className='w-full  grid  md:grid-cols-2 lg:grid-cols-3 gap-4 text-center py-8'>
-
                     {state &&
                         projects.map(categoryData => <WorkDetails
                             key={categoryData._id}

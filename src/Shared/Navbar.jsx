@@ -16,11 +16,15 @@ const Navbar = () => {
         <li>        <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Home </NavLink></li>
  
      
+  
+
         <li><HashLink smooth to='/#about'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > About </HashLink>
         </li>
 
         <li><HashLink smooth to='/#skill'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Skills </HashLink>
         </li>
+
+
         <li><HashLink smooth to='/#work'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Project </HashLink>
         </li>
      
@@ -38,7 +42,7 @@ const Navbar = () => {
 
 
     return (
-        <div className=' w-full bg-[#0e2446]'>
+        <div className=' w-full bg-[#0e2446] '>
             <div className="navbar fixed z-10   bg-[#0e2446] text-white   mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">

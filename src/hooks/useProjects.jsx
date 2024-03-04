@@ -9,7 +9,8 @@ const useProjects = () => {
     
    
   useEffect(()=>{
-      fetch('https://portfolio-server-psi-lake.vercel.app/projects')
+      fetch('http://localhost:5000/projects')
+    //   fetch('https://portfolio-server-psi-lake.vercel.app/projects')
       .then(res=>res.json())
       .then(data=>{
           setProjects(data);
