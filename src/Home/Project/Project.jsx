@@ -14,6 +14,9 @@ const Project = () => {
     const [hovered, setHovered] = useState(false);
     const [status, setStatus] = useState(false);
     const [data, setData] = useState([]);
+    const [allButton,setAllButton]=useState(true)
+    const [frontendButton,setFrontendButton]=useState(false)
+    const [fullStackButton,setFullStackButton]=useState(false)
 
     const [projects, projectsLoading, refetch] = useProjects();
     console.log(projects);
@@ -33,22 +36,34 @@ const Project = () => {
 
     const handleManage = (e) => {
 
-        if(e==='all'){
+        if (e === 'all') {
             setData(projects);
             setStatus(true)
-        }  
-        else if(e==='frontend'){
+            setAllButton(true)
+            setFrontendButton(false)
+            setFullStackButton(false)
+            
+        }
+        else if (e === 'frontend') {
             setData(frontend);
-            setStatus(true)
+            setStatus(true);
+            setAllButton(false)
+            setFrontendButton(true)
+            setFullStackButton(false)
+            
         }
-        else if(e==='fullStack'){
+        else if (e === 'fullStack') {
             setData(fullStack);
-            setStatus(true)
+            setStatus(true);
+            setAllButton(false)
+            setFrontendButton(false)
+            setFullStackButton(true)
+            
         }
-        else{
-         console.log('Error occured');
+        else {
+            console.log('Error occured');
         }
-         
+
         // console.log(e);
     }
 
@@ -57,22 +72,25 @@ const Project = () => {
         <div id='work' name='work' className=' text-black w-full pt-16 max-w-7xl mx-auto'>
 
             <SectionTitle title={'Projects'} subText={'Check out some of my recent work. '}></SectionTitle>
-            <div className='bg-gray-300 p-4'>
+            <div className='  p-4'>
 
                 <div className='flex flex-wrap md:flex-nowrap items-center justify-center gap-4 md:gap-16 my-4 md:my-8 '>
-                    <button className='bg-green-600  px-6 py-2 text-xl rounded-l-full rounded-r-full text-white font-semibold transition-all duration-300 hover:bg-green-500 w-36'
+                 
+                    <button className={` ${allButton ? 'bg-green-500' : 'bg-gray-600'}     px-6 py-2 text-xl rounded-l-full rounded-r-full text-white font-semibold transition-all duration-300 hover:bg-gray-500 w-36`}
                         onClick={() => handleManage('all')}
-
                     >All</button>
 
 
-                    <button className='bg-green-600 px-6 py-2 text-xl rounded-l-full rounded-r-full text-white font-semibold transition-all duration-300 hover:bg-green-500 w-36'    onClick={() => handleManage('frontend')}>Frontend</button>
-                    <button className='bg-green-600 px-6 py-2 text-xl rounded-l-full rounded-r-full text-white font-semibold transition-all duration-300 hover:bg-green-500 w-36'    onClick={() => handleManage('fullStack')}>Full Stack</button>
+                    <button className={ `${frontendButton ? 'bg-green-500' : 'bg-gray-600'}   px-6 py-2 text-xl rounded-l-full rounded-r-full text-white font-semibold transition-all duration-300 hover:bg-gray-500 w-36`} onClick={() => handleManage('frontend')}>Frontend</button>
 
+                    <button className={ `${fullStackButton ? 'bg-green-500' : 'bg-gray-600'}   px-6 py-2 text-xl rounded-l-full rounded-r-full text-white font-semibold transition-all duration-300 hover:bg-gray-500 w-36`} onClick={() => handleManage('fullStack')}>Full Stack</button>
+
+
+     
 
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8 md:gap-12 mt-10'>
 
                     {
                         status ?
