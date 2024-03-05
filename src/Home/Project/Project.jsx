@@ -80,7 +80,7 @@ console.log(modalData)
 
 
     return (
-        <div id='work' name='work' className=' text-black w-full pt-16 max-w-7xl mx-auto'>
+        <div id='work' name='work' className=' text-black w-full pt-20 max-w-7xl mx-auto'>
 
             <SectionTitle title={'Projects'} subText={'Check out some of my recent work. '}></SectionTitle>
             <div className='  p-4'>

@@ -18,7 +18,7 @@ const Navbar = () => {
      
   
 
-        <li><HashLink smooth to='/#about'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > About </HashLink>
+        <li><HashLink smooth to='/#aboutPage'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > About </HashLink>
         </li>
 
         <li><HashLink smooth to='/#skill'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Skills </HashLink>
@@ -29,7 +29,8 @@ const Navbar = () => {
         </li>
      
 
-        <li><HashLink smooth to='/#contact'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Contact </HashLink>
+        <li>
+            <HashLink smooth to='/#contact'  className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Contact </HashLink>
         </li>
 
    
