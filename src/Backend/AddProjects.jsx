@@ -19,7 +19,7 @@ const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
 const AddProjects = () => {
 
-    const [options, setOptions] = useState(['HTML', 'CSS', 'JS', 'React', 'Mern'])
+    const [options, setOptions] = useState(['HTML', 'CSS','Tailwind CSS', 'JS', 'React', 'Node JS','Express JS','MongoDB','Firebase'])
     const [technology, setTechnology] = useState([]);
     // console.log("features array :", technology);
     const [inputs, setInputs] = useState(['']);
@@ -72,7 +72,7 @@ const AddProjects = () => {
                     // console.log(data);
                     const { projectName, serverLink, clientLink, description, category, liveLink } = data;
 
-                    const newProjects = { projectName, serverLink, clientLink, liveLink, category, description, image: imgURL, technology,feature };
+                    const newProjects = { projectName, serverLink, clientLink, liveLink, category, description, image: imgURL, technology, feature };
                     console.log(newProjects);
 
 
@@ -88,7 +88,7 @@ const AddProjects = () => {
                             // console.log(data);
 
                             if (data.insertedId) {
-                                 
+
                                 Swal.fire({
                                     title: 'Success!',
                                     text: 'Projects added successfully',
@@ -109,13 +109,15 @@ const AddProjects = () => {
 
 
     return (
-        <div >
+        <div className='  p-12 max-w-6xl mx-auto '>
 
 
+            <div>
+                <p className='text-center font-bold text-4xl my-6 text-green-500 italic'> Add Your Project</p>
+            </div>
 
-            <form className='-mt-12' onSubmit={handleSubmit(onSubmit)} >
-
-                <div className="hero-content w-full   ">
+            <div className=' w-full'>
+                <form className='' onSubmit={handleSubmit(onSubmit)} >
 
 
 
@@ -173,8 +175,8 @@ const AddProjects = () => {
 
 
 
-    
 
+                            {/* feature  */}
                             <div className="form-control  ">
                                 <label className="label"> <span className="label-text text-black">Features</span> </label>
 
@@ -213,7 +215,7 @@ const AddProjects = () => {
 
 
 
-
+                            {/* technology  */}
                             <div className="form-control mt-4 ">
                                 <label className="label"> <span className="label-text text-black">Technology</span> </label>
                                 <Multiselect
@@ -233,6 +235,7 @@ const AddProjects = () => {
 
 
 
+                            {/* category  */}
                             <div className="form-control  ">
                                 <label className="label"> <span className="label-text text-black">Category  </span> </label>
                                 <select
@@ -252,7 +255,7 @@ const AddProjects = () => {
 
                             <div class="form-control w-full my-4 ">
                                 <label class="label">
-                                    <span class="label-text text-black">Class Image*</span>
+                                    <span class="label-text text-black">Project  Image*</span>
                                 </label>
                                 <input type="file"
                                     {...register("image", { required: true })}
@@ -262,16 +265,17 @@ const AddProjects = () => {
 
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary"><input type="submit" value='Register' /></button>
+                                <button className="btn btn-primary"><input type="submit" value='Add Project' /></button>
                             </div>
 
 
                         </div>
                     </div>
-                </div>
 
-            </form>
 
+                </form>
+
+            </div>
 
             <ToastContainer />
 
