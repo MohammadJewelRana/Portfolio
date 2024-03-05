@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 
 import Swal from 'sweetalert2';
 import Multiselect from 'multiselect-react-dropdown';
+import AdminTitle from './Admin/AdminShared/AdminTitle';
 
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
@@ -19,7 +20,7 @@ const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
 const AddProjects = () => {
 
-    const [options, setOptions] = useState(['HTML', 'CSS','Tailwind CSS', 'JS', 'React', 'Node JS','Express JS','MongoDB','Firebase'])
+    const [options, setOptions] = useState(['HTML', 'CSS', 'Tailwind CSS', 'JS', 'React', 'Node JS', 'Express JS', 'MongoDB', 'Firebase'])
     const [technology, setTechnology] = useState([]);
     // console.log("features array :", technology);
     const [inputs, setInputs] = useState(['']);
@@ -105,16 +106,16 @@ const AddProjects = () => {
 
     }
 
-  
+
 
 
     return (
-        <div className='  p-12 max-w-6xl mx-auto '>
+        <div className='      '>
 
-
-            <div>
+            <AdminTitle heading={"add project"}></AdminTitle>
+            {/* <div>
                 <p className='text-center font-bold text-4xl my-6 text-green-500 italic'> Add Your Project</p>
-            </div>
+            </div> */}
 
             <div className=' w-full'>
                 <form className='' onSubmit={handleSubmit(onSubmit)} >

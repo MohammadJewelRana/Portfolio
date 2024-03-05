@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const AdminNavbar = () => {
   return (
     <div>
-      <div className="navbar bg-slate-200 fixed ">
+      <div className="navbar bg-slate-200 fixed z-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,23 +36,17 @@ const AdminNavbar = () => {
               </li>
               <li>
                 {" "}
-                <Link to="/createNew">Create New</Link>
+                <Link to="/createNew">Create   Project</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/newTask">New Task</Link>
+                <Link to="/newTask">Frontend</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/progress">In Progress</Link>
+                <Link to="/progress">Full Stack</Link>
               </li>
-              <li>
-                {" "}
-                <Link to="/complete">Completed</Link>{" "}
-              </li>
-              <li>
-                <Link to="/cancel">Canceled</Link>{" "}
-              </li>
+ 
             </ul>
           </div>
           <Link to="/admin" className="btn btn-ghost text-xl">
