@@ -142,6 +142,7 @@ const AddProjects = () => {
                             <div className="form-control  ">
                                 <label className="label"> <span className="label-text text-black">Server Side Link  </span> </label>
                                 <input type="text"
+                                  {...register("serverLink", { required: true, maxLength: 100 })}
                                     placeholder="Enter your  server link  "
                                     className="input input-border bg-white border border-sky-300 text-black" />
                                 {errors.className && <span className='text-red-600 mt-2'>Server side link field </span>}

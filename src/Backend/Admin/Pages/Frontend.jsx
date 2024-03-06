@@ -22,7 +22,7 @@ const Frontend = () => {
     }
 
     const handleModal = (id) => {
-        console.log(id);
+        // console.log(id);
         const findData = projects.find(item => item._id === id);
         setModalData(findData)
 
@@ -40,6 +40,7 @@ const Frontend = () => {
                     frontend.map(item => <ManageCard
                         detailsData={item}
                         handleModal={handleModal}
+                        refetch={refetch}
 
                     ></ManageCard>)
                 }
