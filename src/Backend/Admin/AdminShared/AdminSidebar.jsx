@@ -49,7 +49,7 @@ const AdminSidebar = () => {
                     </svg>
 
 
-                    <Link to='/complete'>Email</Link>
+                    <Link to='/admin'>Email</Link>
                 </div>
 
                 <div className='border-b-4 border-b-gray-500'>

@@ -21,6 +21,9 @@ const Project = () => {
     const [frontendButton, setFrontendButton] = useState(false)
     const [fullStackButton, setFullStackButton] = useState(false)
     const [modalData, setModalData] = useState([]);
+    const [visibleProjects, setVisibleProjects] = useState(6);
+
+
 
     const [projects, projectsLoading, refetch] = useAllProjects();
     // console.log(projects);
@@ -42,8 +45,8 @@ const Project = () => {
         setModalData(findData)
 
     }
-console.log(modalData)
- 
+    // console.log(modalData)
+
 
     const handleManage = (e) => {
 
@@ -78,6 +81,10 @@ console.log(modalData)
         // console.log(e);
     }
 
+    const loadMoreProject = () => {
+        setVisibleProjects(prev => prev + 3); // Increase the number of visible projects by 2
+    };
+
 
     return (
         <div id='work' name='work' className=' text-black w-full pt-20 max-w-7xl mx-auto'>
@@ -107,22 +114,36 @@ console.log(modalData)
                         status ?
 
                             <>
+
                                 {
-                                    data.map(item => <ProjectCard
+                                    data.slice(0, visibleProjects).map(item => <ProjectCard
                                         detailsData={item}
                                         handleModal={handleModal}
 
                                     ></ProjectCard>)
                                 }
+                                <div></div>
+                                {visibleProjects < data.length ? (
+                                    <div className='flex mt-4 justify-center '>
+                                        <button className='px-8 py-4 bg-green-500 text-white rounded-l-full rounded-r-full transition-all duration-300 text-xl mx-auto hover:bg-green-600 ' onClick={loadMoreProject} >Load More Projects</button>
+                                    </div>
+                                ) : null}
+
                             </> :
                             <>
                                 {
-                                    projects.map(item => <ProjectCard
+                                    projects.slice(0, visibleProjects).map(item => <ProjectCard
                                         detailsData={item}
                                         handleModal={handleModal}
 
                                     ></ProjectCard>)
                                 }
+                                <div></div>
+                                {visibleProjects < projects.length ? (
+                                    <div className='flex mt-4 '>
+                                        <button className='px-8 py-4 bg-green-500 text-white rounded-l-full rounded-r-full transition-all duration-300 text-xl mx-auto hover:bg-green-600 ' onClick={loadMoreProject} >Load More Projects</button>
+                                    </div>
+                                ) : null}
 
                             </>
                     }
@@ -130,17 +151,9 @@ console.log(modalData)
 
                 </div>
 
-
-
-
-
-
-
-
-
             </div>
 
-           <Modal modalData={modalData}></Modal>
+            <Modal modalData={modalData}></Modal>
 
         </div>
     );

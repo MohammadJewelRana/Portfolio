@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import profile from '../../../assets/InShot_20230803_170208594.jpg'
 
 const AdminNavbar = () => {
   return (
@@ -36,22 +37,26 @@ const AdminNavbar = () => {
               </li>
               <li>
                 {" "}
-                <Link to="/createNew">Create   Project</Link>
+                <Link to="/admin/new">Create   Project</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/newTask">Frontend</Link>
+                <Link to="/admin/frontend">Frontend</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/progress">Full Stack</Link>
+                <Link to="/admin/fullstack">Full Stack</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/admin"> Email  </Link>
               </li>
  
             </ul>
           </div>
           <Link to="/admin" className="btn btn-ghost text-xl">
             {" "}
-            Task <span className="text-red-400 font-semibold ">Manager</span>
+            Jewel's <span className="text-red-400 font-semibold "> Portfolio</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex"></div>
@@ -63,14 +68,15 @@ const AdminNavbar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
+                <img title="Md.Jewel Rana"
                   alt="Tailwind CSS Navbar component"
-                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  src={profile} 
                 />
               </div>
             </div>
 
-            <ul
+            <ul 
+             
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-100 rounded-box w-52 "
             >

@@ -87,7 +87,7 @@ const Update = () => {
         // console.log(data);
 
 
-        fetch(`http://localhost:5000/projects/${projectId.id}`, {
+        fetch(`https://portfolio-server-psi-lake.vercel.app/projects/${projectId.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -187,10 +187,19 @@ const Update = () => {
                                 </div>
 
                                 <div className="form-control  ">
+                                <label className="label"> <span className="label-text text-black">Server Side Github   Link  </span> </label>
+                                <input type="text"
+                                  {...register("serverLinkGithub",  )}
+                                    placeholder="Enter your  server github link  "
+                                    className="input input-border bg-white border border-sky-300 text-black" />
+                                {errors.className && <span className='text-red-600 mt-2'>Server side github link field </span>}
+                            </div>
+
+                                <div className="form-control  ">
                                     <label className="label">
                                         {" "}
                                         <span className="label-text text-black">
-                                            Client Side Link{" "}
+                                            Client Side Github Link{" "}
                                         </span>{" "}
                                     </label>
                                     <input

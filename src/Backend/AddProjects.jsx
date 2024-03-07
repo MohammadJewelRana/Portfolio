@@ -130,7 +130,7 @@ const AddProjects = () => {
 
 
                             <div className="form-control  ">
-                                <label className="label"> <span className="label-text text-black">Project Name</span> </label>
+                                <label className="label"> <span className="label-text text-black">Project Name*</span> </label>
                                 <input type="text"
                                     {...register("projectName", { required: true, maxLength: 100 })}
                                     placeholder="Enter your project name"
@@ -142,14 +142,24 @@ const AddProjects = () => {
                             <div className="form-control  ">
                                 <label className="label"> <span className="label-text text-black">Server Side Link  </span> </label>
                                 <input type="text"
-                                  {...register("serverLink", { required: true, maxLength: 100 })}
+                                  {...register("serverLink",  )}
                                     placeholder="Enter your  server link  "
                                     className="input input-border bg-white border border-sky-300 text-black" />
                                 {errors.className && <span className='text-red-600 mt-2'>Server side link field </span>}
                             </div>
 
+
                             <div className="form-control  ">
-                                <label className="label"> <span className="label-text text-black">Client Side Link  </span> </label>
+                                <label className="label"> <span className="label-text text-black">Server Side Github  Link  </span> </label>
+                                <input type="text"
+                                  {...register("serverLinkGithub",  )}
+                                    placeholder="Enter your  server github link  "
+                                    className="input input-border bg-white border border-sky-300 text-black" />
+                                {errors.className && <span className='text-red-600 mt-2'>Server side github link field </span>}
+                            </div>
+
+                            <div className="form-control  ">
+                                <label className="label"> <span className="label-text text-black">Client Side Github Link*  </span> </label>
                                 <input type="text"
                                     {...register("clientLink", { required: true, maxLength: 100 })} placeholder="Enter your  client link  "
                                     className="input input-border bg-white border border-sky-300 text-black" />
@@ -167,7 +177,7 @@ const AddProjects = () => {
 
 
                             <div className="form-control  ">
-                                <label className="label"> <span className="label-text text-black">Project Short Description </span> </label>
+                                <label className="label"> <span className="label-text text-black">Project Short Description* </span> </label>
                                 <textarea
                                     {...register("description", { required: true, maxLength: 700 })}
                                     className="textarea textarea-accent bg-white text-black" placeholder="Short description"></textarea>
@@ -180,7 +190,7 @@ const AddProjects = () => {
 
                             {/* feature  */}
                             <div className="form-control  ">
-                                <label className="label"> <span className="label-text text-black">Features</span> </label>
+                                <label className="label"> <span className="label-text text-black">Features*</span> </label>
 
                                 <div>
                                     {inputs.map((input, index) => (
@@ -219,7 +229,7 @@ const AddProjects = () => {
 
                             {/* technology  */}
                             <div className="form-control mt-4 ">
-                                <label className="label"> <span className="label-text text-black">Technology</span> </label>
+                                <label className="label"> <span className="label-text text-black">Technology*</span> </label>
                                 <Multiselect
                                     className='border  border-sky-300  rounded-lg'
                                     isObject={false}
@@ -239,14 +249,14 @@ const AddProjects = () => {
 
                             {/* category  */}
                             <div className="form-control  ">
-                                <label className="label"> <span className="label-text text-black">Category  </span> </label>
+                                <label className="label"> <span className="label-text text-black">Category*  </span> </label>
                                 <select
                                     {...register("category", { required: true, maxLength: 100 })}
                                     className="select select-accent w-full bg-white text-black">
 
-                                    <option>HTML & CSS</option>
-                                    <option>JavaScript</option>
-                                    <option>React JS</option>
+                                    {/* <option>HTML & CSS</option>
+                                    <option>JavaScript</option> */}
+                                    <option>Frontend</option>
                                     <option>Mern</option>
                                 </select>
                                 {errors.className && <span className='text-red-600 mt-2'>Category   field is required</span>}
