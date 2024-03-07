@@ -2,23 +2,37 @@ import React, { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import SectionTitle from '../Shared/SectionTitle';
+import html from '../assets/skill/html.png'
+
+import bootStrap from '../assets/skill/BOOTSTRAP.avif'
+import css from  "../assets/skill/css.png"
+import  tailwind from  "../assets/skill/tailwind.png"
+import  javascript from  "../assets/skill/javascript.png"
+import react  from  "../assets/skill/react.png"
+import firebase  from  "../assets/skill/firebase.webp"
+import nodejs  from   "../assets/skill/nodejs.png"
+import express  from   "../assets/skill/express js.png"
+import mongodb from  "../assets/skill/mongodb.png"
+import github  from  "../assets/skill/github.png"
+import nextJs  from  "../assets/skill/nextJs.png"
+ 
 
 
 const Skills = () => {
 
     const data = [
-        { "_id": "1", "skill": "HTML", "image": "../../public/html.png" },
-        { "_id": "2", "skill": "CSS", "image": "../../public/css.png" },
-        { "_id": "3", "skill": "Bootstrap", "image": "../../public/BOOTSTRAP.avif" },
-        { "_id": "4", "skill": "Tailwind", "image": "../../public/tailwind.png" },
-        { "_id": "5", "skill": "JavaScript", "image": "../../public/javascript.png" },
-        { "_id": "6", "skill": "React", "image": "../../public/react.png" },
-        { "_id": "7", "skill": "Firebase", "image": "../../public/firebase.webp" },
-        { "_id": "8", "skill": "NodeJS", "image": "../../public/nodejs.png" },
-        { "_id": "9", "skill": "ExpressJS", "image": "../../public/express js.png" },
-        { "_id": "10", "skill": "MongoDB", "image": "../../public/mongodb.png" },
-        { "_id": "11", "skill": "Github", "image": "../../public/github.png" },
-        { "_id": "12", "skill": "NextJS", "image": "../../public/nextJs.png" }
+        { "_id": "1", "skill": "HTML", "image": html },
+        { "_id": "2", "skill": "CSS", "image":  css },
+        { "_id": "3", "skill": "Bootstrap", "image": bootStrap },
+        { "_id": "4", "skill": "Tailwind", "image":  tailwind },
+        { "_id": "5", "skill": "JavaScript", "image":  javascript },
+        { "_id": "6", "skill": "React", "image": react  },
+        { "_id": "7", "skill": "Firebase", "image": firebase  },
+        { "_id": "8", "skill": "NodeJS", "image": nodejs },
+        { "_id": "9", "skill": "ExpressJS", "image":  express},
+        { "_id": "10", "skill": "MongoDB", "image": mongodb  },
+        { "_id": "11", "skill": "Github", "image": github },
+        { "_id": "12", "skill": "NextJS", "image": nextJs  }
     ]
 
 
