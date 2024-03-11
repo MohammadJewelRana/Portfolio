@@ -69,7 +69,7 @@ const Update = () => {
     //   console.log(typeof projectId);
     const findData = projects.find(item => item._id == projectId.id);
     //   console.log(findData);
-    const { _id, projectName, serverLink, clientLink, liveLink, category, description, feature: featureData, image } = findData;
+    const { _id, projectName, serverLink, clientLink, liveLink, category, description, feature: featureData, image,serverLinkGithub } = findData;
 
 
 
@@ -190,6 +190,7 @@ const Update = () => {
                                 <label className="label"> <span className="label-text text-black">Server Side Github   Link  </span> </label>
                                 <input type="text"
                                   {...register("serverLinkGithub",  )}
+                                  defaultValue={serverLinkGithub}
                                     placeholder="Enter your  server github link  "
                                     className="input input-border bg-white border border-sky-300 text-black" />
                                 {errors.className && <span className='text-red-600 mt-2'>Server side github link field </span>}

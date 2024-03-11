@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   return (
 
-    <div id='about' className="     bg-[#0a192f] text-white pt-24 mb-12 pb-12 ">
+    <div id='home' className="     bg-[#0a192f] text-white pt-24 mb-12 pb-12 ">
 
 
 
@@ -29,7 +29,7 @@ const HeroSection = () => {
 
           <div>
             <button className="btn btn-outline btn-success group mt-4">
-              <a href="../../public/resume.png" download='Resume'>Download resume </a>
+              <a href="../../public/CV_(Md.Jewel_Rana).pdf" download='CV'>Download CV </a>
               <FaArrowRight className='group-hover:rotate-90 duration-300 text-2xl ml-4'></FaArrowRight></button>
           </div>
 

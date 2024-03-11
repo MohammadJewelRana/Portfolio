@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMale } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 
@@ -55,19 +56,22 @@ const AdminSidebar = () => {
                 <div className='border-b-4 border-b-gray-500'>
 
                 </div>
+            
                 <div className='text-xl flex justify-start gap-4 items-center  hover:bg-red-300 p-2 cursor-pointer transition-all duration-300 pl-8 mb-4 mt-24'>
+
+                    <FaMale></FaMale>
+                        <Link to='/'>Portfolio</Link>
+                
+                </div>
+            
+
+                <div className='text-xl flex justify-start gap-4 items-center  hover:bg-red-300 p-2 cursor-pointer transition-all duration-300 pl-8 mb-4'>
 
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path fillRule="evenodd" d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm10.72 4.72a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06l1.72-1.72H9a.75.75 0 0 1 0-1.5h10.94l-1.72-1.72a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                     </svg>
-
-
-
-                    <Link to='/cancel'>Logut</Link>
+                        <Link to='/cancel'>Logut</Link>
                 </div>
-
-
-
 
             </div>
 

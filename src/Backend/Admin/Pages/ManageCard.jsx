@@ -6,6 +6,7 @@ const ManageCard = ({ detailsData, handleModal,refetch }) => {
 
   const { _id, projectName, clientLink, liveLink, category, description, feature, image } = detailsData;
 
+
   const handleDelete = (id) => {
     // console.log(id);
   
@@ -20,7 +21,8 @@ const ManageCard = ({ detailsData, handleModal,refetch }) => {
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://portfolio-server-psi-lake.vercel.app/${id}`, {
+          // fetch(`http://localhost:5000/projects/${id}`, {
+          fetch(`https://portfolio-server-psi-lake.vercel.app/projects/${id}`, {
             method: 'DELETE'
           })
             .then(res => res.json())
@@ -44,6 +46,32 @@ const ManageCard = ({ detailsData, handleModal,refetch }) => {
   }
 
 
+  // const handleDownload = async () => {
+  //   try {
+  //     // Fetch the image data
+  //     const response = await fetch(image);
+  //     const blob = await response.blob();
+      
+  //     // Create a URL for the blob
+  //     const blobUrl = window.URL.createObjectURL(new Blob([blob]));
+      
+  //     // Create an anchor element
+  //     const link = document.createElement('a');
+  //     link.href = blobUrl;
+      
+  //     // Set the download attribute with the file name (optional)
+  //     link.download = 'resume.jpg'; // You can set any file name here
+      
+  //     // Trigger a click event on the anchor element
+  //     document.body.appendChild(link);
+  //     link.click();
+  //     document.body.removeChild(link);
+  //   } catch (error) {
+  //     console.error('Error downloading image:', error);
+  //   }
+  // };
+
+ 
   return (
     <div className='z-1'>
       <div className='  mb-8  rounded-lg shadow-xl shadow-green-100 group'>
@@ -60,8 +88,20 @@ const ManageCard = ({ detailsData, handleModal,refetch }) => {
 
         <div className='flex items-center justify-around  gap-4 my-2 pb-4 '>
           <Link to={`/admin/update/${_id}`}> <button className='px-4 py-2 bg-green-600 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-green-400' >Update</button></Link>
+
           <button className='px-4 py-2 bg-red-600 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-red-400' onClick={() => handleDelete(_id)}>Delete</button>
+
+          {/* <button  onClick={handleDownload} className='px-4 py-2 bg-red-600 cursor-pointer text-white font-semibold rounded-lg transition-all duration-300 hover:bg-red-400' >
+            
+            Down
+          
+          </button> */}
+
+
         </div>
+
+    
+
       </div>
 
     </div>

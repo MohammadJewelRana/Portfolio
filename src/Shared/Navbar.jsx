@@ -13,7 +13,7 @@ const Navbar = () => {
 
     const navLinks = < >
 
-        <li>        <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Home </NavLink></li>
+        <li>        <NavLink to="/#home" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "    border-b-2   border-b-white " : ""} > Home </NavLink></li>
  
      
   
@@ -43,7 +43,7 @@ const Navbar = () => {
 
 
     return (
-        <div className=' w-full bg-[#0e2446] '>
+        <div id='header' className=' w-full bg-[#0e2446] '>
             <div className="navbar fixed z-10   bg-[#0e2446] text-white   mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">

@@ -4,7 +4,9 @@ import { FaFeatherPointed } from "react-icons/fa6";
 
 
 const Modal = ({ modalData }) => {
-    const { _id: modalId, projectName: modelProjectName, clientLink: modalClientLink, liveLink: modalLiveLink, category: modalCategory, description: modalDescription, feature: modalFeature, image: modalImage, serverLink, technology } = modalData;
+    const { _id: modalId, projectName: modelProjectName, clientLink: modalClientLink, liveLink: modalLiveLink, category: modalCategory, description: modalDescription, feature: modalFeature, image: modalImage, serverLink, technology, serverLinkGithub } = modalData;
+
+    console.log(modalData);
     return (
         <div>
 
@@ -22,13 +24,32 @@ const Modal = ({ modalData }) => {
                         <div className='flex md:justify-center px-8 gap-12 mt-8 flex-wrap md:flex-nowrap'>
                             <div className='md:w-1/2'>
 
-                                <div className='my-4 flex gap-8'>
-                                    <Link className='text-green-500 underline text-xl ' to={modalLiveLink} title='Click to go  Live Link'>Live Link</Link>
-                                    <Link className='text-green-500 underline text-xl ' to={serverLink} title='Click to go server Link'>Server Link</Link>
-                                    <Link className='text-green-500 underline text-xl ' to={modalClientLink} title='Click to go Github Link'>Github Link</Link>
+                                <div className='my-4 flex gap-4 flex-wrap text-[13px] md:text-xl'>
+
+                                    {
+                                        modalLiveLink &&
+                                        <Link className='text-green-500 underline   ' to={modalLiveLink} title='Click to go  Live Link'>Live Link</Link>
+                                    }
+
+                                    {
+                                        serverLink &&
+                                        <Link className='text-green-500 underline   ' to={serverLink} title='Click to go server Link'>Server Link</Link>
+                                    }
+                                    {
+                                        modalClientLink &&
+                                        <Link className='text-green-500 underline   ' to={modalClientLink} title='Click to go Github Link'>Github  Client</Link>
+                                    }
+                                    {
+                                        serverLinkGithub &&
+                                        <Link className='text-green-500 underline   ' to={serverLinkGithub} title='Click to go Github Link'>Github Server  </Link>
+                                    }
+
+
+
+
                                 </div>
                                 <div>
-                                    <div className='text-[14px] flex  gap-4 text-justify'>
+                                    <div className='text-[16px] leading-7 flex  gap-4 text-justify'>
 
                                         <p> <span className='font-semibold'>Description:</span> {modalDescription}</p>
                                     </div>
@@ -62,18 +83,28 @@ const Modal = ({ modalData }) => {
                             <div className='md:w-1/2'>
                                 <div className=' gap-4 capitalize text-xl  '>
                                     <h1 className='font-semibold'>project feature :</h1>
-                                    <div className='text-[14px] '>
+                                    <div className='text-[18px] '>
                                         {
                                             modalFeature?.map((item, index) =>
-                                                <div className=' my-2'>
+                                                <div className=' my-2 flex items-center gap-3'>
 
-                                                    <p>  {item}</p>
-                                                    <div className='border-b-green-200 border-b-2 '></div>
+                                                    <span className='flex '>
+                                                        <div className='border border-green-600 my-4 mr-4'></div>
+                                                       {item}
+                                                         
+
+                                                    </span>
+                                                    <div className='   my-4'></div>
                                                 </div>
                                             )
                                         }
                                     </div>
                                 </div>
+
+
+
+
+
                             </div>
 
                         </div>

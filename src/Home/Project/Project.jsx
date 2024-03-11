@@ -43,6 +43,8 @@ const Project = () => {
         console.log(id);
         const findData = projects.find(item => item._id === id);
         setModalData(findData)
+        console.log(findData);
+
 
     }
     // console.log(modalData)

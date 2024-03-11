@@ -7,7 +7,7 @@ const ProjectCard = ({ detailsData, handleModal }) => {
 
 
   // console.log(detailsData);
-  const { _id, projectName, clientLink, liveLink, category, description, feature, image } = detailsData;
+  const { _id, projectName, clientLink, liveLink, category, description, feature, image ,serverLinkGithub} = detailsData;
 
   // const [projects, projectsLoading, refetch] = useAllProjects();
 

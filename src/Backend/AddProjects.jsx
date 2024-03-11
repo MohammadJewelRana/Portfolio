@@ -71,9 +71,9 @@ const AddProjects = () => {
                     const imgURL = imgResponse.data.display_url;
                     // console.log(imgURL);
                     // console.log(data);
-                    const { projectName, serverLink, clientLink, description, category, liveLink } = data;
+                    const { projectName, serverLink, clientLink, description, category, liveLink,serverLinkGithub } = data;
 
-                    const newProjects = { projectName, serverLink, clientLink, liveLink, category, description, image: imgURL, technology, feature };
+                    const newProjects = { projectName, serverLink,serverLinkGithub, clientLink, liveLink, category, description, image: imgURL, technology, feature };
                     console.log(newProjects);
 
 
@@ -277,7 +277,7 @@ const AddProjects = () => {
 
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary"><input type="submit" value='Add Project' /></button>
+                                <button className="btn btn-primary cursor-pointer"><input type="submit" value='Add Project' /></button>
                             </div>
 
 
