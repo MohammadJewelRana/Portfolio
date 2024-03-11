@@ -28,9 +28,14 @@ const HeroSection = () => {
 
 
           <div>
+            {/* <button className="btn btn-outline btn-success group mt-4">
+              <a href="../../public/CV.pdf" download='CV'>Download CV </a>
+              <FaArrowRight className='group-hover:rotate-90 duration-300 text-2xl ml-4'></FaArrowRight></button> */}
+
             <button className="btn btn-outline btn-success group mt-4">
-              <a href="../../public/CV_(Md.Jewel_Rana).pdf" download='CV'>Download CV </a>
-              <FaArrowRight className='group-hover:rotate-90 duration-300 text-2xl ml-4'></FaArrowRight></button>
+              <a href="/CV.pdf" download='CV'>Download CV</a>
+              <FaArrowRight className='group-hover:rotate-90 duration-300 text-2xl ml-4'></FaArrowRight>
+            </button>
           </div>
 
         </div>
